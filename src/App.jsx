@@ -5,6 +5,7 @@ import Cultivos from './pages/Cultivos';
 import Bancales from './pages/Bancales';
 import Tareas from './pages/Tareas';
 import Registros from './pages/Registros';
+import Aromaticas from './pages/Aromaticas';
 
 export default function App() {
   return (
@@ -15,7 +16,8 @@ export default function App() {
         <Link to='/cultivos'>Cultivos</Link>
         <Link to='/bancales'>Bancales</Link>
         <Link to='/tareas'>Tareas</Link>
-        <Link to='/registros'>Registros</Link>
+import Registros from './pages/Registros';
+import Aromaticas from './pages/Aromaticas';
       </nav>
       <Routes>
         <Route path='/' element={<Dashboard />} />
@@ -23,7 +25,8 @@ export default function App() {
         <Route path='/cultivos' element={<Cultivos />} />
         <Route path='/bancales' element={<Bancales />} />
         <Route path='/tareas' element={<Tareas />} />
-        <Route path='/registros' element={<Registros />} />
+import Registros from './pages/Registros';
+import Aromaticas from './pages/Aromaticas';
       </Routes>
     </HashRouter>
   );

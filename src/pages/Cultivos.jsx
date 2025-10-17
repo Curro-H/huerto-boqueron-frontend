@@ -1,33 +1,27 @@
 import { useEffect, useState } from 'react';
-import Parse from '../parseConfig';
+import { getCultivos } from '../api';
 
 export default function Cultivos() {
   const [cultivos, setCultivos] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchCultivos = async () => {
-      const Cultivo = Parse.Object.extend('Cultivo');
-      const query = new Parse.Query(Cultivo);
-      const results = await query.find();
-      setCultivos(results);
+    getCultivos().then(data => {
+      setCultivos(data);
       setLoading(false);
-    };
-    fetchCultivos();
+    });
   }, []);
 
   if (loading) return <p>Cargando cultivos...</p>;
-
   return (
     <div>
       <h1>Cultivos</h1>
       <ul>
-        {cultivos.length === 0 && <li>No hay cultivos aún.</li>}
-        {cultivos.map(cultivo => (
-          <li key={cultivo.id}>{cultivo.get('nombre')}</li>
+        {cultivos.length === 0 && <li>No hay cultivos.</li>}
+        {cultivos.map(c => (
+          <li key={c.objectId}>{c.nombre}</li>
         ))}
       </ul>
     </div>
   );
 }
-

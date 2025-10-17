@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import Calendario from './pages/Calendario';
 import Cultivos from './pages/Cultivos';
@@ -8,7 +8,7 @@ import Registros from './pages/Registros';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <nav style={{display: 'flex', gap: 10, marginBottom: 20}}>
         <Link to='/'>Dashboard</Link>
         <Link to='/calendario'>Calendario</Link>
@@ -25,7 +25,7 @@ export default function App() {
         <Route path='/tareas' element={<Tareas />} />
         <Route path='/registros' element={<Registros />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

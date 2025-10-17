@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import Calendario from './pages/Calendario';
+import Cultivos from './pages/Cultivos';
+import Bancales from './pages/Bancales';
+import Tareas from './pages/Tareas';
+import Registros from './pages/Registros';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <BrowserRouter>
+      <nav style={{display: 'flex', gap: 10, marginBottom: 20}}>
+        <Link to='/'>Dashboard</Link>
+        <Link to='/calendario'>Calendario</Link>
+        <Link to='/cultivos'>Cultivos</Link>
+        <Link to='/bancales'>Bancales</Link>
+        <Link to='/tareas'>Tareas</Link>
+        <Link to='/registros'>Registros</Link>
+      </nav>
+      <Routes>
+        <Route path='/' element={<Dashboard />} />
+        <Route path='/calendario' element={<Calendario />} />
+        <Route path='/cultivos' element={<Cultivos />} />
+        <Route path='/bancales' element={<Bancales />} />
+        <Route path='/tareas' element={<Tareas />} />
+        <Route path='/registros' element={<Registros />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App

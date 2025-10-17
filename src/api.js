@@ -1,5 +1,5 @@
 const APP_ID = "DVZZ0duSaOnAlzRFxY8QfKefIpouP4iaNg51oKno";
-const JS_KEY = "I1UjxSkRoE1Fe7pacb3rYU6AiOs9DGyiLk81kMrg";
+const JS_KEY = "Vfn7YufxGzsYfCx7t8W9t1GUqzwWg5Chz3dFeuqr";
 const API_URL = "https://parseapi.back4app.com/classes";
 
 export async function getCultivos() {
